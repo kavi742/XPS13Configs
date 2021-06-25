@@ -31,6 +31,9 @@ sudo wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xU
 sudo apt update
 sudo apt-get install albert
 
+#pfetch
+git clone https://github.com/dylanaraps/pfetch
+
 #Config files
 sudo cp ./pfetch/pfetch /usr/local/bin/
 cp -r ./chrome ~/.mozilla/firefox/
