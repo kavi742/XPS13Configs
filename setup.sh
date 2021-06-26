@@ -71,7 +71,7 @@ sudo rm -rf ./Layan-cursors
 sudo add-apt-repository ppa:papirus/papirus
 sudo apt-get update
 sudo apt-get install qt5-style-kvantum qt5-style-kvantum-themes
-
+tar -xvf ./Nordic.tar.xz
 
 #wallpapers
 cp -r ./wallpapers/ ~/Pictures/
