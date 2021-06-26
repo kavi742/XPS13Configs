@@ -67,6 +67,12 @@ cd ./Layan-cursors
 cd ..
 sudo rm -rf ./Layan-cursors
 
+	#Kvantum
+sudo add-apt-repository ppa:papirus/papirus
+sudo apt-get update
+sudo apt-get install qt5-style-kvantum qt5-style-kvantum-themes
+
+
 #wallpapers
 cp -r ./wallpapers/ ~/Pictures/
 
