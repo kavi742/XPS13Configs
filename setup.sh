@@ -57,10 +57,15 @@ git clone https://github.com/bergercookie/awesome-albert-plugins
 mv ./awesome-albert-plugins ~/.local/share/albert/org.albert.extension.python/modules/
 
 	#icons
-cp ./kora/ ~/.local/share/icons/
-mkdir ~/.icons
-cp ./Layan-white-cursors ~/.icons
+git clone https://github.com/bikass/kora
+mv ./kora/* ~/.local/share/icons/
+sudo rm -rf ./kora
 
+git clone https://github.com/vinceliuice/Layan-cursors
+cd ./Layan-cursors
+./install.sh
+cd ..
+sudo rm -rf ./Layan-cursors
 
 #wallpapers
 cp -r ./wallpapers/ ~/Pictures/
