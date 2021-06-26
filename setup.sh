@@ -56,5 +56,17 @@ cd ..
 git clone https://github.com/bergercookie/awesome-albert-plugins
 mv ./awesome-albert-plugins ~/.local/share/albert/org.albert.extension.python/modules/
 
+	#icons
+cp ./kora/ ~/.local/share/icons/
+mkdir ~/.icons
+cp ./Layan-white-cursors ~/.icons
+
+
 #wallpapers
 cp -r ./wallpapers/ ~/Pictures/
+
+#fingerprint config
+echo auth [success=1 default=ignore] pam_unix.so nullok_secure | sudo tee /etc/pam.d/common-auth
+echo auth            sufficient      pam_unix.so try_first_pass likeauth nullok | sudo tee /etc/pam.d/sddm
+echo auth sufficient pam_fingerprintd.so | sudo tee /etc/pam.d/sddm
+sudo pam-auth-update
