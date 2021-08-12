@@ -22,7 +22,7 @@ sudo apt update -qq
 wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash
 
 #Plasma
-sudo apt install kde-plasma-desktop
+# sudo apt install kde-plasma-desktop
 
 #Albert
 curl "https://build.opensuse.org/projects/home:manuelschneid3r/public_key" | sudo apt-key add -
@@ -76,7 +76,7 @@ tar -xvf ./Nordic.tar.xz
 #wallpapers
 cp -r ./wallpapers/ ~/Pictures/
 
-#fingerprint config
+#fingerprint config with sddm
 echo auth [success=1 default=ignore] pam_unix.so nullok_secure | sudo tee /etc/pam.d/common-auth
 echo auth            sufficient      pam_unix.so try_first_pass likeauth nullok | sudo tee /etc/pam.d/sddm
 echo auth sufficient pam_fingerprintd.so | sudo tee /etc/pam.d/sddm
