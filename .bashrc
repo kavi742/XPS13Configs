@@ -57,8 +57,10 @@ wolf(){
 alias youtube="ytfzf"
 alias vpn="sudo tailscale"
 sshPlex(){
-		ssh plex@$(vpn status|grep plex|grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}")
+		ssh plex@$(tailscale status|grep plex|grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}")
 }
+alias sensors="sensors | grep -E 'id|Core'"
+alias emacs='emacs -nw'
 
 # confirm before overwriting something
 alias cp="cp -i"
@@ -82,3 +84,4 @@ bind 'set show-all-if-ambiguous on'
 bind 'set completion-ignore-case on'
 bind 'TAB:menu-complete'
 eval "$(thefuck --alias)"
+

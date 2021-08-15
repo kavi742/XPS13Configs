@@ -4,7 +4,6 @@ filetype indent on
 
 set noerrorbells
 set tabstop=4 softtabstop=4
-set guicursor=
 set smartindent
 set number relativenumber
 set nowrap
@@ -23,7 +22,7 @@ set ignorecase
 set updatetime=300
 set signcolumn=number
 set shortmess+=c
-
+set t_Co=256
 
 "autoinstall vimplug 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -49,6 +48,7 @@ call plug#end()
 colorscheme gruvbox-material
 let g:gruvbox_material_background = 'soft'
 let g:gruvbox_material_statusline_style = 'original'
+let g:gruvbox_material_disable_italic_comment = 1
 set background=dark
 
 
@@ -60,8 +60,10 @@ set laststatus=2
 set noshowmode
 
 "Colours
-if !has('gui_running')
+if has('gui_running')
 		set t_Co=256
+		set guicursor=
+		set guifont=Monospace\ 16
 endif
 
 "Python
@@ -73,10 +75,6 @@ au BufNewFile,BufRead *.py
 						\ set shiftwidth=4
 						\ set foldmethod=indent
 						\ let python_highlight_all=1
-						
-
-"leader
-let mapleader = " "
 
 "latex
 autocmd Filetype tex setl updatetime=500
@@ -95,6 +93,9 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+"leader
+let mapleader = " "
 
 "window movement
 nnoremap <leader>h :wincmd h<CR>
