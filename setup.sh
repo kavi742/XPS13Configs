@@ -57,15 +57,15 @@ git clone https://github.com/bergercookie/awesome-albert-plugins
 mv ./awesome-albert-plugins ~/.local/share/albert/org.albert.extension.python/modules/
 
 	#icons
-git clone https://github.com/bikass/kora
-mv ./kora/* ~/.local/share/icons/
-sudo rm -rf ./kora
+# git clone https://github.com/bikass/kora
+# mv ./kora/* ~/.local/share/icons/
+# sudo rm -rf ./kora
 
-git clone https://github.com/vinceliuice/Layan-cursors
-cd ./Layan-cursors
-./install.sh
-cd ..
-sudo rm -rf ./Layan-cursors
+# git clone https://github.com/vinceliuice/Layan-cursors
+# cd ./Layan-cursors
+# ./install.sh
+# cd ..
+# sudo rm -rf ./Layan-cursors
 
 	#Kvantum
 sudo add-apt-repository ppa:papirus/papirus
@@ -77,7 +77,7 @@ tar -xvf ./Nordic.tar.xz
 cp -r ./wallpapers/ ~/Pictures/
 
 #fingerprint config with sddm
-echo auth [success=1 default=ignore] pam_unix.so nullok_secure | sudo tee /etc/pam.d/common-auth
-echo auth            sufficient      pam_unix.so try_first_pass likeauth nullok | sudo tee /etc/pam.d/sddm
-echo auth sufficient pam_fingerprintd.so | sudo tee /etc/pam.d/sddm
-sudo pam-auth-update
+# echo auth [success=1 default=ignore] pam_unix.so nullok_secure | sudo tee /etc/pam.d/common-auth
+# echo auth            sufficient      pam_unix.so try_first_pass likeauth nullok | sudo tee /etc/pam.d/sddm
+# echo auth sufficient pam_fingerprintd.so | sudo tee /etc/pam.d/sddm
+# sudo pam-auth-update

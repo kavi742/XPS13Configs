@@ -36,9 +36,10 @@ fi
 
 
 #(cat ~/.cache/wal/sequences &)
+  export YARN="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
   export SPICETIFY_INSTALL="/home/kavi741/spicetify-cli"
   export INTELLIJ_PATH="/home/kavi741/idea-IC-211.6693.111/bin"
-  export PATH="$SPICETIFY_INSTALL:$INTELLIJ_PATH:$PATH"
+  export PATH="$SPICETIFY_INSTALL:$INTELLIJ_PATH:$YARN:$PATH"
 
 #undervolt
 #alias undervolt="sudo python3 ~/undervolt/undervolt.py"
