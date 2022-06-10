@@ -1,0 +1,415 @@
+/* 
+___ _            _                 _   
+/ __(_)_ __  _ __| |___ _ _ ___ _ _| |_ 
+\__ \ | '  \| '_ \ / -_) '_/ -_) ' \  _|
+|___/_|_|_|_| .__/_\___|_| \___|_||_\__|
+| __|____ __|_|                         
+| _/ _ \ \ /                            
+|_|\___/_\_\                            
+
+Hide URL Bar Version
+
+ */
+
+/* 
+
+V A R I A B L E S 
+
+Here you can change the opacity level and the main color of the browser. Also the color of the selections (When you select text)
+
+ */
+
+/* @import "theme/nordic-theme.css"; */
+
+:root {
+		--srf-color-primary: #28282885;
+		--srf-color-selection: #b8bb26;
+		/* --srf-color-primary: #2e3440; */
+		/* --srf-color-selection: #7fc1f4; */
+}
+
+/* 
+G E N E R A L 
+ */
+
+#star-button{
+		display:none;
+}
+
+window,
+#main-window,
+#toolbar-menubar,
+#TabsToolbar,
+#PersonalToolbar,
+#navigator-toolbox,
+#sidebar-box,
+#nav-bar {
+		background-color: var(--srf-color-primary) !important;
+		-moz-appearance: none !important;
+		background-image: none !important;
+		border: none !important;
+		box-shadow: none !important;
+		--tab-min-height: 30px !important
+}
+
+::selection {
+		background-color: var(--srf-color-selection);
+		/* Text color of your selection */
+		color: #ffffff;
+}
+
+/* 
+T A B S 
+ */
+
+:root {
+		--tabs-border: transparent !important;
+}
+
+.tab-background {
+		border: none !important;
+}
+
+.tab-background[selected='true'] {
+		-moz-appearance: none !important;
+		background-image: none !important;
+}
+
+
+.tabbrowser-tabs {
+		border: none !important;
+		opacity: 0 !important;
+}
+
+.tabbrowser-tab::before,
+.tabbrowser-tab::after {
+		opacity: 0 !important;
+		border-left: none !important;
+}
+
+.titlebar-placeholder {
+		border: none !important;
+}
+
+.tab-line {
+		display: none !important;
+}
+
+
+/* Shows tab audio icons next to the tab icon, and by default removes the tab secondary line */
+.tabbrowser-tab:not(:hover):not([pinned]) .tab-label-container{ margin-inline-end: 7px }
+.tab-label-container{ -moz-box-pack: center; -moz-box-orient: horizontal }
+.tabbrowser-tab:not([pinned]) .tab-icon-stack:is([muted],[soundplaying],[activemedia-blocked]){
+  grid-template-areas: "a s";
+}
+.tabbrowser-tab:not([pinned]) .tab-icon-overlay:is([muted],[soundplaying],[activemedia-blocked]){ grid-area: s; }
+.tab-icon-overlay,.tab-icon-image{ opacity: 1 !important; }
+
+.tab-icon-overlay:not([pinned]){
+  padding: 0px !important;
+  margin-inline: -3px 1px !important;
+}
+
+/* secondary audio label ain't much use with this style, but feel free to remove the next line if you want to show it. */
+.tab-secondary-label{ display: none }
+
+/* show the secondary label when video is in PiP */
+.tab-secondary-label[pictureinpicture]{ display: -moz-box }
+/* 
+
+
+B U T T O N S 
+
+Here you can comment if you want your buttons to be showed up!
+
+ */
+
+/* This one is the forward button  */
+#forward-button {
+		display: none !important;
+}
+
+/* This one is the back button  */
+#back-button {
+		display: none !important;
+}
+
+/* This one is the spacer between tabs and border  */
+.titlebar-spacer {
+		display: none !important;
+}
+
+/* This one is the "shield" icon  */
+#tracking-protection-icon-container {
+		display: none !important;
+}
+
+/* This one is the hamburger menu!  */
+#PanelUI-button {
+		display: none !important;
+}
+
+/* This one removes the close button  */
+/* .tabbrowser-tab:not([pinned]) .tab-close-button { */
+/* 		display: !important; */
+/* } */
+
+/* This one clears the tabs icon when they're not pinned  */
+.tabbrowser-tab:not([pinned]) .tab-icon-image {
+		display: none !important;
+}
+
+/* Removing the zoom button  */
+#urlbar-zoom-button {
+		display: none !important;
+}
+
+/* Page action (right three dots button)  */
+#pageActionButton {
+		display: none !important;
+}
+
+/* 
+N A V B A R
+ */
+
+#navigator-toolbox::after {
+		border-bottom: 0px !important;
+		border-top: 0px !important;
+}
+
+#nav-bar {
+		border: none !important;
+		box-shadow: none !important;
+		margin-top: 0px !important;
+		border-top-width: 0px !important;
+		margin-bottom: 0px !important;
+		border-bottom-width: 0px !important;
+}
+
+/* 
+S I D E - B A R
+ */
+
+#history-panel,
+#sidebar-search-container,
+#bookmarksPanel {
+		background: var(--srf-color-primary) !important;
+}
+
+#search-box {
+		-moz-appearance: none !important;
+		background: var(--srf-color-primary) !important;
+		border-radius: 6px !important;
+}
+
+#sidebar-icon {
+		display: none !important;
+}
+
+.sidebar-placesTree {
+		color: #eee !important;
+}
+
+#sidebar-switcher-target {
+		color: #eee !important;
+}
+
+#sidebar-header {
+		background: var(--srf-color-primary) !important;
+}
+
+#sidebar-splitter {
+		border: none !important;
+		opacity: 1 !important;
+		background-color: var(--srf-color-primary) !important;
+}
+
+splitter#sidebar-splitter {
+		border: none !important;
+}
+
+/* 
+U R L - B A R
+ */
+
+#urlbar[breakout] {
+		margin-inline-start: 0px !important;
+		width: 100% !important;
+		left: 0 !important;
+		top: calc(
+		(var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2
+		) !important;
+}
+
+@-moz-document url(chrome://browser/content/browser.xhtml)
+{
+		#urlbar[breakout][breakout-extend] > #urlbar-background {
+				animation-name: none !important;
+				box-shadow: none !important;
+		}
+}
+
+#urlbar[breakout]:not([open]) {
+		bottom: calc(
+		(var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2
+		) !important;
+}
+
+#urlbar-background {
+		background: transparent !important;
+		border-radius:10px !important;
+		border: transparent !important;
+		animation: none !important;
+}
+
+#urlbar-input-container {
+		padding: 0 !important;
+		height: 100% !important;
+}
+
+#identity-box {
+		display: none;
+}
+
+#urlbar .urlbarView {
+		display: none !important;
+}
+
+#searchbar {
+		background: var(--bf-bg) !important;
+		border: none !important;
+}
+
+.searchbar-textbox {
+		color: var(--bf-focus-fg) !important;
+		font-weight: 700 !important;
+}
+
+#urlbar-label-box, #urlbar-search-mode-indicator {
+		display: none !important;
+}
+
+/*this centers the url text*/
+#urlbar:not([focused]) #urlbar-input {text-align:center !important}
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* ----- Avoids white flash ----- */
+#tabbrowser-tabpanels {background-color: var(--uc-light-bkgnd-color, var(--color1)) !important;}
+/* ----- Avoids white flash ----- */
+#tabbrowser-tabpanels {background-color: var(--uc-light-bkgnd-color, var(--color1)) !important;}
+
+/*this removes the tab bar when theres only one tab*/
+:root[sizemode="normal"] #nav-bar{ --uc-window-drag-space-width: 20px }
+
+#titlebar{ -moz-appearance: none !important; }
+#TabsToolbar{ min-height: 0px !important }
+
+#tabbrowser-tabs,
+#tabbrowser-arrowscrollbox{ min-height: 0 !important; }
+
+:root:not([customizing]) #tabs-newtab-button,
+:root:not([customizing]) #TabsToolbar-customization-target > .toolbarbutton-1,
+:root:not([customizing]) #TabsToolbar .titlebar-button{
+  -moz-appearance: none !important;
+  height: 0px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  -moz-box-align: stretch;
+  margin: 0 !important;
+}
+
+.accessibility-indicator,
+.private-browsing-indicator{ 
+  height: unset !important;
+}
+.accessibility-indicator > hbox{ padding-block: 0 !important }
+
+.tabbrowser-tab{
+  height: calc(var(--tab-min-height) + 2 * var(--tab-block-margin,0px));
+}
+
+.tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
+  visibility: collapse !important;
+  /* These seem unnecessary, but they achieve compatibility with hide_tabs_with_one_tab.css */
+  min-height: 0 !important;
+  height: 0;
+}
+
+/* Button re-styling */
+#tabs-newtab-button{ transform: scale(0.8); }
+#tabs-newtab-button:hover{
+  background-color: var(--toolbarbutton-hover-background);
+  border-radius: var(--tab-border-radius);
+}
+
+#tabs-newtab-button > .toolbarbutton-icon{
+  padding: 0 !important;
+  transform: scale(0.5);
+  background-color: transparent !important;
+}
+/* Fix window controls not being clickable */
+:root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive]{
+  transition: height 0ms steps(1) 80ms;
+}
+:where(#nav-bar){
+  border-inline: var(--uc-window-drag-space-width,0) solid var(--toolbar-bgcolor);
+}
+@media (-moz-platform: linux){
+  #TabsToolbar .titlebar-buttonbox{
+    -moz-box-align: stretch !important;
+  }
+  #TabsToolbar > .titlebar-buttonbox-container > .titlebar-buttonbox > .titlebar-button{
+    transform: scale(0.8);
+    margin-inline: -3px !important;
+  }
+  #TabsToolbar .titlebar-button > .toolbarbutton-icon{ padding: 0 13px !important }
+}
+
+/* Always show tab close button on hover and never otherwise */
+.tabbrowser-tab .tab-close-button{
+  display:none;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button{
+  display:-moz-box !important;
+}
+
+/*tabs below urlbar*/
+#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
+#TabsToolbar > .titlebar-buttonbox-container{
+  position: fixed;
+  display: block;
+  top: 0px;
+  right:0;
+  height: 40px;
+}
+
+:root[uidensity="compact"] #TabsToolbar > .titlebar-buttonbox-container{ height: 32px }
+
+#toolbar-menubar[inactive] > .titlebar-buttonbox-container{ opacity: 0 }
+
+.titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
+
+#titlebar{
+  -moz-box-ordinal-group: 2;
+  -moz-appearance: none !important;
+  --tabs-navbar-shadow-size: 0px;
+}
+/* Re-order window and tab notification boxes */
+#navigator-toolbox > div{ display: contents }
+.global-notificationbox,
+#tab-notification-deck{ -moz-box-ordinal-group: 2 }
+
+#TabsToolbar .titlebar-spacer{ display: none; }
+/* Also hide the toolbox bottom border which isn't at bottom with this setup */
+#navigator-toolbox::after{ display: none !important; }
+
+@media (-moz-gtk-csd-close-button){ .titlebar-button{ -moz-box-orient: vertical } }
+
+/* At Activated Menubar */
+:root:not([chromehidden~="menubar"], [sizemode="fullscreen"]) #toolbar-menubar:not([autohide="true"]) + #TabsToolbar > .titlebar-buttonbox-container {
+  display: block !important;
+}
+#toolbar-menubar:not([autohide="true"]) > .titlebar-buttonbox-container {
+  visibility: hidden;
+}
+#PersonalToolbar{ -moz-box-ordinal-group: 2 }
